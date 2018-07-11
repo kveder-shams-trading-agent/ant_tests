@@ -70,8 +70,8 @@ def cusum_filter(df, h, asset_attribute='Level'):
     return pandas.Series(filter_points)
 
 
-def plot_df(df, x_col=None, assets=[0, 1], colours=None):
-    x_col = x_col or df.index
+def plot_df(df, colours=None):
+    x_col = df.index
     colours = colours or ['b' for colname in df.columns]
     for colname, colour in zip(df.columns, colours):
         if colname != x_col.name and colour:
